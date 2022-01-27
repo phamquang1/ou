@@ -1,0 +1,26 @@
+$primary-color: #4646F1;
+$primary-color-rgb: rgba(70, 70, 241, 0.4);
+$text-white: #ffffff;
+$text-white-dark: rgba(255, 255, 255, 0.87);
+$text-grey: #787474;
+$bg-dark-gradient: linear-gradient(0deg, rgba(70, 70, 241, 0.1), rgba(70, 70, 241, 0.1)), linear-gradient(0deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.04)), #121212;
+$bg-white: #ffffff;
+$mobile-width: 480px; 
+$tablet-width: 768px; 
+$desktop-width: 1024px;
+$bg-dark: #242424;
+
+@mixin mobile { @media (max-width: #{$mobile-width - 1px}) {     
+    @content;   
+   } 
+  }  
+  
+  @mixin tablet { @media (min-width: #{$tablet-width - 1px}) and (max-width: #{$desktop-width - 1px}) {       
+     @content;   
+   } 
+  }  
+  
+  @mixin desktop {   @media (min-width: #{$desktop-width}) {     
+    @content;  
+   } 
+  }

@@ -1,0 +1,13 @@
+<div class="swiper-content">
+    <swiper
+      [config]="config" [pagination]="true"
+      (swiper)="onSwiper($event)"
+      (slideChange)="onSlideChange()"
+    >
+      <ng-template swiperSlide *ngFor="let i of [1,2,3,4]">
+        <div class="slide-bg">
+          <img src="./../assets/imgs/1.jpg" alt="" srcset="">
+        </div>
+      </ng-template>
+    </swiper>
+</div>

@@ -1,0 +1,59 @@
+<div class="cart">
+    <div class="cart-header" fxLayout="row" fxLayoutAlign="space-between center">
+        <div class="reset">
+            reset
+        </div>
+        <div class="close">
+            x
+        </div>
+    </div>
+    <div class="cart-subheader">
+        <h3 class="text-order">Order</h3>
+        <p class="name">Mama Mia Restaurant</p>
+    </div>
+    <div class="location">
+        <div class="address">
+            <span>icon</span>
+            <span>location</span>
+        </div>
+        <div class="time">
+            <span>icon</span>
+            <span>location</span>
+        </div>
+    </div>
+    <div class="cart-wapper">
+        <ng-container *ngFor="let _ of [1,2,3]">
+            <div class="cart-main">
+                <div class="card-box bg-dark-gradient">
+                    <div class="card-header"  fxLayout="row" fxLayoutAlign="space-between start">
+                        <div class="title" fxFlex="66%">divas sdf sjhdf sjdfhjs fjshdjf sjdhfjshdj fjshdfjhsj dhf</div>
+                        <div class="price" fxFlex="33%">$34</div>
+                    </div>
+                    <div class="cart-btn" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div class="qty"  fxLayout="row" >
+                            <p>-</p>
+                            <p>+</p>
+                        </div>
+                        <div class="action"  fxLayout="row" >
+                            <p>icon</p>
+                            <p>icon</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <div class="method">
+            <div class="method-box bg-dark-gradient" fxLayout="row" fxLayoutAlign="space-between start">
+                <div class="name" fxFlex="66%">
+                    <p class="title">Delivery</p>
+                    <p class="des">This API set applies CSS stylings</p>
+                </div>
+                <div class="price" fxFlex="33%">$34</div>
+            </div>
+        </div>
+        <div class="btn">
+            <button class="text-white-light white " mat-flat-button color="primary">Primary</button>
+        </div>
+    </div>
+    
+</div>

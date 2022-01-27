@@ -1,0 +1,64 @@
+<p class="toolbar-wapper" *ngIf="!isXsDevice">
+  <mat-toolbar color="accent" fxLayout="row">
+    <div class="toolbar-logo" fxFlex="20" fxFlex.lg="0 0 200px">
+      <div class="logo" style="background-image: url('../../../assets/imgs/banner.png')"></div>
+    </div>
+    <div class="toolbar-main" fxLayout="row" fxLayoutAlign="end center" fxFlex="100">
+      <div color="accent" class="filter" fxLayout="row" fxLayoutAlign="center center" fxFlex="142px">
+        <div class="btn-wapper" fxLayout="row" fxLayoutAlign="center center">
+          <mat-icon class="text-grey icon">filter_alt</mat-icon>
+          <span class="text">Filter</span>
+        </div>
+      </div>
+      <div class="search" fxFlex="auto">hi</div>
+      <div color="primary" class="cart bg-primary" fxLayout="row" fxLayoutAlign="center center" fxFlex="142px">
+        <div class="btn-wapper" fxLayout="row" fxLayoutAlign="center center">
+          <mat-icon class="text-white-light icon">shopping_cart</mat-icon>
+          <p class="text text-white-light">10000</p>
+        </div>
+      </div>
+      <div class="user" fxLayout="row" fxLayoutAlign="start center" fxFlex="142px" fxLayoutGap="1px">
+
+        <mat-icon class="text-grey icon-1">person_outline</mat-icon>
+        <mat-icon class="text-grey icon-2">expand_more</mat-icon>
+      </div>
+    </div>
+  </mat-toolbar>
+</p>
+
+<p class="toolbar-mobile" *ngIf="isXsDevice">
+  <mat-toolbar color="accent">
+    <mat-toolbar-row class="toolbar-one" fxLayout="row" fxLayoutAlign="space-between end">
+      <div class="header-toolbar" fxLayout="row" fxLayoutAlign="space-between end">
+        <div class="logo" style="background-image: url('../../../assets/imgs/banner.png')"></div>
+        <div class="icon-wapper">
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <!-- <button
+            mat-icon-button
+            class="example-icon"
+            aria-label="Example icon-button with menu icon"
+            (click)="onToggle()"
+          >
+            <mat-icon>menu</mat-icon>
+          </button> -->
+          <mat-slide-toggle [(ngModel)]="isDark" (change)="changeToggle($event)"></mat-slide-toggle>
+        </div>
+      </div>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row class="toolbar-two" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+      <div class="toolbar-method" fxFlex="45">
+        Pick up
+      </div>
+      <div class="toolbar-time" fxFlex="55" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+        <span class="text time">Sat 2 <span class="date"></span> </span>
+        <span class="text">2pm - 3pm</span>
+        <button mat-icon-button class="example-icon edit" aria-label="Example icon-button with menu icon">
+          Edit
+        </button>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p>

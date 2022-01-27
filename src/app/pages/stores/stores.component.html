@@ -1,0 +1,98 @@
+<div class="main">
+    <div class="header-toolbar">
+        <app-toolbar-header [isXsDevice]="isXsDevice"></app-toolbar-header>
+    </div>
+    <div class="body-content" [ngStyle]="{
+      'max-height': isXsDevice ? 'calc(100vh - 130px)' : 'calc(100vh - 80px)'
+    }">
+        <ng-container *ngIf="!isXsDevice">
+            <div class="banner" style="background-image: url('../../../assets/imgs/b.png')" fxLayout="row" fxLayoutAlign="center center">
+                <div class="address">
+                    <p class="text-white-light">Pham Đình Quang</p>
+                    <p class="text-white-light">Thái Bình</p>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="isXsDevice">
+            <app-swiper-product></app-swiper-product>
+        </ng-container>
+        <div class="body-main" fxLayout="row">
+            <div class="card-wapper" *ngIf="!isXsDevice" fxFlex="250px" fxFlex.lt-md="200px">
+                <div class="example-card sidebar">
+                    <app-sidebar [isXsDevice]="isXsDevice"></app-sidebar>
+                </div>
+            </div>
+            <div class="method-wapper bg" fxFlex="auto">
+                <div class="method sidebar bg" *ngIf="!isXsDevice" style="z-index: 5; " fxLayout="row" [fxLayoutAlign]="isViewCart ? 'space-around center': 'start center'" 
+                    fxLayoutGap="10px">
+                    <div class="toolbar-method " style="z-index: 5; " [fxFlex]="isViewCart ? '45': '30'">Pick up</div>
+                    <div class="toolbar-time" style="z-index: 5; " [fxFlex]="isViewCart ? '55': '35'" fxLayout="row"
+                        fxLayoutAlign="start center" fxLayoutGap="10px">
+                        <span class="text" style="z-index: 5; ">Sat 2</span>
+                        <span class="text" style="z-index: 5; ">2pm - 3pm</span>
+                        <button mat-icon-button class="example-icon edit" (click)="handleEdit()"
+                            aria-label="Example icon-button with menu icon">
+                            Edit
+                        </button>
+                    </div>
+                </div>
+                <div class="product " fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="20px" fxLayoutGap.lt-md="4px" fxLayoutGap.lt-sm="10px"
+                    fxLayoutAlign="flex-start">
+                    <ng-container *ngIf="!isXsDevice">
+                        <ng-container *ngFor="let _ of [1,2,3,4,5,6,4,4,4,4,4,4,4,4,4,]">
+                            <div class="product-item bg-dark-gradient" [fxFlex]="isViewCart ? '0 1 calc(50% - 20px)' : '0 1 calc(33.3% - 20px)'"
+                            [fxFlex.lt-lg]="isViewCart ? '100%': '0 1 calc(50% - 20px)'"
+                              [fxFlex.lt-md]="isViewCart ? '100%': '0 1 calc(50% - 20px)'"
+                                fxFlex.lt-sm="100%"
+                                
+                                >
+                                <div class="product-detail" fxLayout="row" fxLayoutGap="30px">
+                                    <div class="product-thumnail">
+                                        <img src="../../../assets/imgs/6.jpg" alt="" srcset="">
+                                    </div>
+                                    <div class="product-des">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="isXsDevice">
+                        <ng-container *ngFor="let _ of [1,2,3,4,5]">
+                            <div class="category-item bg-dark-gradient" [fxFlex]="isViewCart ? '0 1 calc(50% - 20px)' : '0 1 calc(33.3% - 20px)'"
+                            [fxFlex.lt-lg]="isViewCart ? '100%': '0 1 calc(50% - 20px)'"
+                              [fxFlex.lt-md]="isViewCart ? '100%': '0 1 calc(50% - 20px)'"
+                                fxFlex.lt-sm="100%"
+                                
+                                >
+                                <div class="category-detail" fxLayout="row" fxLayoutGap="30px" fxLayoutGap.lt-sm="10px">
+                                    <div class="category-thumnail">
+                                        <img src="../../../assets/imgs/6.jpg" alt="" srcset="">
+                                    </div>
+                                    <div class="category-des">
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </ng-container>
+                </div>
+                <div *ngIf="isXsDevice" style="height: 70px;"></div>
+            </div>
+            <div class="cart-wapper" fxFlex="calc((100% - 250px) / 3)" fxFlex.lt-md="calc((100% - 200px) / 3)" *ngIf="isViewCart && !isXsDevice">
+                <div class="cart-content sidebar">
+                    <app-cart></app-cart>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-toolbar bg-dark-gradient" *ngIf="isXsDevice" fxLayout="row" fxLayoutAlign="center center">
+        <div class="btn-footer"  fxLayout="row" fxLayoutAlign="space-between center">
+            <div class="cart text-white-light">Cart</div>
+            <div class="price text-white-light">$40</div>
+        </div>
+    </footer>
+</div>
